@@ -12,6 +12,7 @@ var pubs = make(bls.PublicKeys,5)
 var signs = make([]bls.Sign,5)
 var aggSignbysec bls.Sign
 
+//The five private keys are signed separately
 func Sign() {
 	for i := 0; i < 5; i++ {
 		var sec bls.SecretKey
@@ -28,12 +29,14 @@ func Sign() {
 
 }
 
+//Put the five signatures together
 func AggregateSign() {
 	aggSignbysec.Aggregate(signs)
 
 
 }
 
+//Verify the aggregation signature
 func VerifyAggregateFast() {
 	fmt.Printf("%s\n", aggSignbysec.FastAggregateVerify(pubs, msgbyte))
 
