@@ -4,7 +4,7 @@
 
 ### HOW TO START
 
-#### First: You need to create a new go project.And make sure you init the mod
+#### First: You need to create a new go project. And make sure you init the mod
     go mod init xxx
 
 #### Second: 
